@@ -18,12 +18,13 @@ int compare(struct Bigint num1, struct Bigint num2) {
 }
 
 struct Bigint subtract(struct Bigint num1, struct Bigint num2) {
-    struct Bigint result;
+    typedef struct Bigint Bigint;
+    Bigint result;
     int borrow = 0;
     
     int cmp = compare(num1, num2);
     
-    struct Bigint larger, smaller;
+    Bigint larger, smaller;
     if (cmp > 0) {
         larger = num1;
         smaller = num2;
@@ -80,7 +81,8 @@ struct Bigint subtract(struct Bigint num1, struct Bigint num2) {
 }
 
 void Solution(){
-    struct Bigint num1, num2, result;
+    typedef struct Bigint Bigint;
+    Bigint num1, num2, result;
     char num1_str[100]; 
     char num2_str[100]; 
 
