@@ -11,18 +11,23 @@ void pinMode(uint8_t port, uint8_t pin, uint8_t state) {
     }
 }
 
-void digitalWrite(uint8_t port, uint8_t pin) {
+void digitalWrite(uint8_t port, uint8_t pin,uint8_t state) {
     
-    setBit(*PORT[port], pin);
+    switch (state)
+    {
+        case HIGH : setBit(*PORT[port], pin); break;
+        case LOW : clearBit(*PORT[port], pin); break;
+    }
 
-}
-
-uint8_t digitalRead(uint8_t port, uint8_t pin) {
-    return getBit(*PIN[port], pin);
 }
 
 void digitalToggle(int8_t port, uint8_t pin) {
     
     toggleBit(*PORT[port], pin);
 }
+
+uint8_t digitalRead(uint8_t port, uint8_t pin) {
+    return getBit(*PIN[port], pin);
+}
+
 
