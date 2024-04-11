@@ -1,7 +1,7 @@
 #ifndef STDTYPES_H
 #define STDTYPES_H
 
-#include <stdint.h> // Include standard integer types
+#include <stdint.h> 
 
 typedef unsigned char               uint8_t  ;
 typedef unsigned short int          uint16_t ;
